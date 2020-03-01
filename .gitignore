@@ -78,3 +78,8 @@ models/citability_w_Article/train_data.json
 
 # Google News Vectors
 GoogleNews-vectors-negative300.bin
+
+#
+models/cite_wa/OneLabelTextCNN/data/
+models/cite_wa/OneLabelTextCNN/runs/
+models/cite_wa/OneLabelTextCNN/logs/
