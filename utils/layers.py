@@ -118,8 +118,8 @@ def do_cnn(gov_or_art,
                                   name="relu")
 
             print(conv_out)
-            conv_out_squeezed = tf.squeeze(conv_out, [2])
-            feature_maps.append(conv_out_squeezed)
+            # conv_out_squeezed = tf.squeeze(conv_out, [2])
+            feature_maps.append(conv_out)
         
         with tf.name_scope("pool-filter{}_{}".format(filter_size,
                                                      gov_or_art)):
