@@ -141,48 +141,51 @@ class OneLabelTextCNN(object):
             )  # this is the final logit_layer with bias
             self.scores = tf.sigmoid(self.logits, name="scores")
 
-            y_c_citable = tf.squeeze(self.logits, [1])
-            grad_cam_c_filtersize = []
-            for feature_map_gov in feature_maps_gov:
-                _dy_da = tf.gradients(self.logits, feature_map_gov)[0]
-                # shape: [None, length-filter_size+1, filter_num]
+            def calc_grad_cam(feature_maps, seq_len):
+                grad_cam_c_filtersize = []
+                for feature_map in feature_maps:
+                    _dy_da = tf.gradients(self.logits, feature_map)[0]
+                    # shape: [None, length-filter_size+1, filter_num]
 
-                # squeeze after get gradients
-                _dy_da = tf.squeeze(_dy_da, [2])
-                feature_map_gov = tf.squeeze(feature_map_gov, [2])
+                    # squeeze after get gradients
+                    _dy_da = tf.squeeze(_dy_da, [2])
+                    feature_map = tf.squeeze(feature_map, [2])
 
-                _alpha_c = tf.reduce_mean(_dy_da, axis=1)
-                # shape: [None, filter_num]
+                    _alpha_c = tf.reduce_mean(_dy_da, axis=1)
+                    # shape: [None, filter_num]
 
-                _grad_cam_c = tf.nn.relu(
-                    tf.reduce_sum(
-                        tf.multiply(
-                            tf.transpose(feature_map_gov, perm=[0, 2, 1]),
-                            tf.stack([_alpha_c], axis=2),
-                        ),
-                        axis=1,
+                    _grad_cam_c = tf.nn.relu(
+                        tf.reduce_sum(
+                            tf.multiply(
+                                tf.transpose(feature_map, perm=[0, 2, 1]),
+                                tf.stack([_alpha_c], axis=2),
+                            ),
+                            axis=1,
+                        )
                     )
-                )
 
-                _interpol_grad_cam_c = tf.stack(
-                    [tf.stack([_grad_cam_c], axis=2)], axis=3
-                )
-                _interpol_grad_cam_c = tf.image.resize_bilinear(
-                    images=_interpol_grad_cam_c,
-                    size=[sequence_length_gov, 1],
-                )
-                _interpol_grad_cam_c = tf.squeeze(_interpol_grad_cam_c, axis=[2, 3])
-                # shape: [None, length]
+                    _interpol_grad_cam_c = tf.stack(
+                        [tf.stack([_grad_cam_c], axis=2)], axis=3
+                    )
+                    _interpol_grad_cam_c = tf.image.resize_bilinear(
+                        images=_interpol_grad_cam_c,
+                        size=[seq_len, 1],
+                    )
+                    _interpol_grad_cam_c = tf.squeeze(_interpol_grad_cam_c, axis=[2, 3])
+                    # shape: [None, length]
 
-                grad_cam_c_filtersize.append(_interpol_grad_cam_c)
+                    grad_cam_c_filtersize.append(_interpol_grad_cam_c)
 
-            grad_cam_c = tf.reduce_sum(tf.stack(grad_cam_c_filtersize, axis=0),
+                grad_cam_c = tf.reduce_sum(tf.stack(grad_cam_c_filtersize, axis=0),
                                        axis=0)
-            # grad_cam_c shape: [None, length]    (element wise sum for each grad cam per filter_size)
-            grad_cam_c = grad_cam_c / tf.norm(grad_cam_c, axis=1,
-                                              keepdims=True)
+                # grad_cam_c shape: [None, length]    (element wise sum for each grad cam per filter_size)
+                grad_cam_c = grad_cam_c / tf.norm(grad_cam_c, axis=1,
+                                                  keepdims=True)
+                return grad_cam_c
+
             # grad_cam_c shape: [None, length]    (element wise normalize)
-            print(grad_cam_c)
+            self.grad_cam_c_gov = calc_grad_cam(feature_maps_gov, seq_len=sequence_length_gov)
+            self.grad_cam_c_art = calc_grad_cam(feature_maps_art, seq_len=sequence_length_art)
 
         # Calculate mean cross-entropy loss, L2 loss
         with tf.name_scope("loss"):
