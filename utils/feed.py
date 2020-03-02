@@ -395,6 +395,8 @@ def data_word2vec_one_label(input_file,
                       "json file.")
     
     with open(input_file) as fin:
+        raw_tokens_list_gov = []
+        raw_tokens_list_art = []
         test_id_list = []
         content_index_list_gov = []
         content_index_list_art = []
@@ -415,6 +417,10 @@ def data_word2vec_one_label(input_file,
                 features_content_gov))
             content_index_list_art.append(_token_to_index(
                 features_content_art))
+
+            raw_tokens_list_gov.append(features_content_gov)
+            raw_tokens_list_art.append(features_content_art)
+
             # labels_list.append(label)
             # onehot_labels_list.append(_create_onehot_labels(labels_index,
             #                                                 num_labels))
@@ -434,7 +440,15 @@ def data_word2vec_one_label(input_file,
         @property
         def testid(self):
             return test_id_list
-        
+
+        @property
+        def raw_tokens_gov(self):
+            return raw_tokens_list_gov
+
+        @property
+        def raw_tokens_art(self):
+            return raw_tokens_list_art
+
         @property
         def tokenindex_gov(self):
             return content_index_list_gov
