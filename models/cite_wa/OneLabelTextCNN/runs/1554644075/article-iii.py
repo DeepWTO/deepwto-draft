@@ -1,10 +1,12 @@
 filename = 'article-iii.txt'
 
 with open(filename) as f:
-    content = f.readlines()
+    lines = f.readlines()
 
-content = [x.strip() for x in content]
+lines = [x.strip() for x in lines]
 
 if __name__ == "__main__":
-    print(content)
+    for idx, line in enumerate(lines):
+        if line == 'True Positive!':
+            print(lines[idx+3][2:-3], line)
     pass
