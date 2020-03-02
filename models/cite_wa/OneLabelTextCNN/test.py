@@ -5,6 +5,7 @@ __modify__ = "Zachary"
 import os
 import sys
 import time
+import pickle
 import logging
 import numpy as np
 import tensorflow as tf
@@ -21,6 +22,8 @@ from sklearn.metrics import (
     roc_auc_score,
     average_precision_score,
 )
+
+import matplotlib.pyplot as plt
 
 # Parameters
 # ==================================================
@@ -305,8 +308,7 @@ def test(word2vec_path):
                 )
                 logger.info("✔︎ Writing to {0}\n".format(out_dir))
 
-            checkpoint_dir = os.path.abspath(os.path.join(out_dir,
-                                                          'checkpoints'))
+            checkpoint_dir = os.path.abspath(os.path.join(out_dir, "checkpoints"))
 
             # Summaries for loss
             loss_summary = tf.summary.scalar("loss", cnn.loss)
@@ -327,7 +329,7 @@ def test(word2vec_path):
                 logger.info("✔︎ Loading model...")
                 print(checkpoint_dir)
                 # checkpoint_file = tf.train.latest_checkpoint(checkpoint_dir)
-                checkpoint_file='/Users/zachary/deepwto/deepwto-draft/models/cite_wa/OneLabelTextCNN/runs/1554644075/checkpoints/model-156300'
+                checkpoint_file = "/Users/zachary/deepwto/deepwto-draft/models/cite_wa/OneLabelTextCNN/runs/1554644075/checkpoints/model-156300"
                 logger.info(checkpoint_file)
                 # Load the saved meta graph and restore variables
                 saver = tf.train.import_meta_graph("{0}.meta".format(checkpoint_file))
@@ -352,8 +354,11 @@ def test(word2vec_path):
             current_step = sess.run(cnn.global_step)
             print("current_step: ", current_step)
 
-            def validation_step(_x_val_testid, _x_val_gov, _x_val_art, _y_val, writer=None):
-                print("_x_val_gov: ", len(_x_val_gov))
+            def validation_step(
+                _x_val_testid, _x_val_gov, _x_val_art, _y_val, writer=None
+            ):
+                print("_x_val_gov: ", len(_x_val_gov), _x_val_gov)
+
                 print("_x_val_art: ", len(_x_val_art))
                 """Evaluates model on a validation set"""
                 batches_validation = feed.batch_iter(
@@ -381,102 +386,165 @@ def test(word2vec_path):
 
                 valid_step_count = 0
                 for batch_validation in batches_validation:
-                    valid_step_count += 1
                     print(valid_step_count)
 
                     x_val_testid, x_batch_val_gov, x_batch_val_art, y_batch_val = zip(
                         *batch_validation
                     )
 
-                    art = x_val_testid[0].split('_')[-1].split(' ')[-1]
+                    art = x_val_testid[0].split("_")[-1].split(" ")[-1]
 
                     if len(art) >= 3:
                         if art[0:3] == "III":
+                            if y_batch_val[0][0] > 0:
 
-                            feed_dict = {
-                                cnn.input_x_gov: x_batch_val_gov,
-                                cnn.input_x_art: x_batch_val_art,
-                                cnn.input_y: y_batch_val,
-                                cnn.dropout_keep_prob: 1.0,
-                                cnn.is_training: False,
-                            }
-                            step, summaries, scores, cur_loss, input_y = sess.run(
-                                [
-                                    cnn.global_step,
-                                    validation_summary_op,
-                                    cnn.scores,
-                                    cnn.loss,
-                                    cnn.input_y,
-                                ],
-                                feed_dict,
-                            )
-
-                            (
-                                count_label_one,
-                                count_label_zero,
-                                count_correct_one,
-                                count_correct_zero,
-                            ) = count_correct_pred(scores, input_y)
-
-                            print(x_val_testid)
-
-                            valid_count_correct_one += count_correct_one
-                            valid_count_label_one += count_label_one
-
-                            valid_count_correct_zero += count_correct_zero
-                            valid_count_label_zero += count_label_zero
-
-                            print(
-                                "[VALID] num_correct_answer is {} out of {}".format(
-                                    count_correct_one, count_label_one
-                                )
-                            )
-                            print(
-                                "[VALID] num_correct_answer is {} out of {}".format(
-                                    count_correct_zero, count_label_zero
-                                )
-                            )
-
-                            # Prepare for calculating metrics
-                            for i in y_batch_val:
-                                true_onehot_labels.append(i)
-                            for j in scores:
-                                predicted_onehot_scores.append(j)
-
-                            # Predict by threshold
-                            batch_predicted_onehot_labels_ts = feed.get_onehot_label_threshold(
-                                scores=scores, threshold=FLAGS.threshold
-                            )
-
-                            for k in batch_predicted_onehot_labels_ts:
-                                predicted_onehot_labels_ts.append(k)
-
-                            # Predict by topK
-                            for _top_num in range(FLAGS.top_num):
-                                batch_predicted_onehot_labels_tk = feed.get_onehot_label_topk(
-                                    scores=scores, top_num=_top_num + 1
+                                feed_dict = {
+                                    cnn.input_x_gov: x_batch_val_gov,
+                                    cnn.input_x_art: x_batch_val_art,
+                                    cnn.input_y: y_batch_val,
+                                    cnn.dropout_keep_prob: 1.0,
+                                    cnn.is_training: False,
+                                }
+                                (
+                                    step,
+                                    summaries,
+                                    scores,
+                                    grad_cam_c_gov,
+                                    grad_cam_c_art,
+                                    cur_loss,
+                                    input_y,
+                                ) = sess.run(
+                                    [
+                                        cnn.global_step,
+                                        validation_summary_op,
+                                        cnn.scores,
+                                        cnn.grad_cam_c_gov,
+                                        cnn.grad_cam_c_art,
+                                        cnn.loss,
+                                        cnn.input_y,
+                                    ],
+                                    feed_dict,
                                 )
 
-                                for i in batch_predicted_onehot_labels_tk:
-                                    predicted_onehot_labels_tk[_top_num].append(i)
+                                (
+                                    count_label_one,
+                                    count_label_zero,
+                                    count_correct_one,
+                                    count_correct_zero,
+                                    TFPN,
+                                ) = count_correct_pred(scores, input_y)
 
-                            _eval_loss = _eval_loss + cur_loss
-                            _eval_counter = _eval_counter + 1
+                                def _plot_score(
+                                    vec, pred_text, xticks, gov_or_art, testid
+                                ):
+                                    _axis_fontsize = 13
+                                    fig = plt.figure(figsize=(14, 10))
+                                    plt.yticks([])
+                                    plt.xticks(
+                                        range(0, len(vec)),
+                                        xticks,
+                                        fontsize=_axis_fontsize,
+                                    )
+                                    fig.add_subplot(1, 1, 1)
+                                    plt.figtext(
+                                        x=0.13,
+                                        y=0.54,
+                                        s="Prediction: {}".format(pred_text),
+                                        fontsize=15,
+                                        fontname="sans-serif",
+                                    )
+                                    img = plt.imshow([vec], vmin=0, vmax=1)
+                                    # plt.show()
+                                    plt.savefig(testid[0] + "_" + gov_or_art + ".png")
 
-                            if writer:
-                                writer.add_summary(summaries, step)
-                    else:
-                        pass
+                                raw_gov_tokens = val_data.raw_tokens_gov[
+                                    valid_step_count
+                                ]
+                                raw_art_tokens = val_data.raw_tokens_art[
+                                    valid_step_count
+                                ]
+
+                                print(x_val_testid)
+                                print(grad_cam_c_gov[0], len(grad_cam_c_gov[0]))
+                                print(grad_cam_c_art[0], len(grad_cam_c_art[0]))
+                                print(raw_gov_tokens)
+                                print(raw_art_tokens)
+
+                                if TFPN == "TRUE POSITIVE":
+                                    pkl_target = dict()
+                                    pkl_target["x_val_testid"] = x_val_testid
+                                    pkl_target["grad_cam_c_gov"] = grad_cam_c_gov[0]
+                                    pkl_target["grad_cam_c_art"] = grad_cam_c_art[0]
+                                    pkl_target["raw_gov_tokens"] = raw_gov_tokens
+                                    pkl_target["raw_art_tokens"] = raw_art_tokens
+                                    with open(
+                                        x_val_testid[0] + "_grad_cams" + ".pkl",
+                                        "wb",
+                                    ) as handle:
+                                        pickle.dump(
+                                            pkl_target, handle, protocol=pickle.HIGHEST_PROTOCOL
+                                        )
+
+                                # _plot_score(grad_cam_c[0], pred_text="POSITVE", xticks=raw_gov_tokens, gov_or_art="gov", testid=x_val_testid)
+                                # _plot_score(grad_cam_c[0], pred_text="POSITVE", xticks=raw_art_tokens, gov_or_art="art", testid=x_val_testid)
+
+                                valid_count_correct_one += count_correct_one
+                                valid_count_label_one += count_label_one
+
+                                valid_count_correct_zero += count_correct_zero
+                                valid_count_label_zero += count_label_zero
+
+                                print(
+                                    "[VALID] num_correct_answer is {} out of {}".format(
+                                        count_correct_one, count_label_one
+                                    )
+                                )
+                                print(
+                                    "[VALID] num_correct_answer is {} out of {}".format(
+                                        count_correct_zero, count_label_zero
+                                    )
+                                )
+
+                                # Prepare for calculating metrics
+                                for i in y_batch_val:
+                                    true_onehot_labels.append(i)
+                                for j in scores:
+                                    predicted_onehot_scores.append(j)
+
+                                # Predict by threshold
+                                batch_predicted_onehot_labels_ts = feed.get_onehot_label_threshold(
+                                    scores=scores, threshold=FLAGS.threshold
+                                )
+
+                                for k in batch_predicted_onehot_labels_ts:
+                                    predicted_onehot_labels_ts.append(k)
+
+                                # Predict by topK
+                                for _top_num in range(FLAGS.top_num):
+                                    batch_predicted_onehot_labels_tk = feed.get_onehot_label_topk(
+                                        scores=scores, top_num=_top_num + 1
+                                    )
+
+                                    for i in batch_predicted_onehot_labels_tk:
+                                        predicted_onehot_labels_tk[_top_num].append(i)
+
+                                _eval_loss = _eval_loss + cur_loss
+                                _eval_counter = _eval_counter + 1
+
+                                if writer:
+                                    writer.add_summary(summaries, step)
+                            else:
+                                pass
+
+                    valid_step_count += 1
 
                 logger.info(
                     "[VALID_FINAL] Total Correct One Answer is {} out "
-                    "of {}".format(valid_count_correct_one,
-                                   valid_count_label_one)
+                    "of {}".format(valid_count_correct_one, valid_count_label_one)
                 )
                 logger.info(
                     "[VALID_FINAL] Total Correct Zero Answer is {} "
-                    "out of {}".format(valid_count_correct_zero,
-                                       valid_count_label_zero)
+                    "out of {}".format(valid_count_correct_zero, valid_count_label_zero)
                 )
 
                 _eval_loss = float(_eval_loss / _eval_counter)
@@ -552,7 +620,11 @@ def test(word2vec_path):
                 eval_pre_tk,
                 eval_F_tk,
             ) = validation_step(
-                x_val_testid, x_val_gov, x_val_art, y_val, writer=validation_summary_writer
+                x_val_testid,
+                x_val_gov,
+                x_val_art,
+                y_val,
+                writer=validation_summary_writer,
             )
 
             logger.info(
