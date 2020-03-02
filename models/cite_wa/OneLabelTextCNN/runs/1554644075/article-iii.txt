@@ -1,3 +1,8 @@
+current_step:  156300
+_x_val_gov:  2287
+_x_val_art:  2287
+INFO:tflog:
+Evaluation:
 1
 2
 3
@@ -14,7 +19,7 @@
 14
 15
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.69958854]
 ('18_[Article III]',)
@@ -22,7 +27,7 @@ after_sigmoid [0.69958854]
 [VALID] num_correct_answer is 0 out of 1
 16
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.05525165]
 ('18_[Article III:5]',)
@@ -59,7 +64,7 @@ after_sigmoid [0.05525165]
 45
 46
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00513031]
 ('31_[Article III:1]',)
@@ -83,7 +88,7 @@ after_sigmoid [0.00513031]
 62
 63
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.6656779]
 ('34_[Article III]',)
@@ -91,7 +96,7 @@ after_sigmoid [0.6656779]
 [VALID] num_correct_answer is 0 out of 1
 64
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.02183071]
 ('34_[Article III:1]',)
@@ -99,7 +104,7 @@ after_sigmoid [0.02183071]
 [VALID] num_correct_answer is 1 out of 1
 65
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.09234487]
 ('34_[Article III:5]',)
@@ -123,7 +128,7 @@ after_sigmoid [0.09234487]
 81
 82
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00596074]
 ('46_[Article III:5]',)
@@ -191,7 +196,7 @@ after_sigmoid [0.00596074]
 142
 143
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01176349]
 ('62_[Article III:2]',)
@@ -199,7 +204,7 @@ after_sigmoid [0.01176349]
 [VALID] num_correct_answer is 1 out of 1
 144
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [7.3633737e-06]
 ('62_[Article III:7]',)
@@ -234,7 +239,7 @@ after_sigmoid [7.3633737e-06]
 171
 172
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [7.3633737e-06]
 ('68_[Article III:7]',)
@@ -258,7 +263,7 @@ after_sigmoid [7.3633737e-06]
 188
 189
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.5433192]
 ('69_[Article III:5]',)
@@ -299,7 +304,7 @@ after_sigmoid [0.5433192]
 222
 223
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.3510349]
 ('76_[Article III:4]',)
@@ -326,7 +331,7 @@ after_sigmoid [0.3510349]
 242
 243
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00142581]
 ('87_[Article III:1]',)
@@ -342,7 +347,7 @@ after_sigmoid [0.02212574]
 [VALID] num_correct_answer is 0 out of 0
 245
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.7205642]
 ('87_[Article III:4]',)
@@ -362,7 +367,7 @@ after_sigmoid [0.7205642]
 257
 258
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.6369378]
 ('90_[Article III]',)
@@ -370,7 +375,7 @@ after_sigmoid [0.6369378]
 [VALID] num_correct_answer is 0 out of 1
 259
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.19352035]
 ('90_[Article III:1]',)
@@ -378,7 +383,7 @@ after_sigmoid [0.19352035]
 [VALID] num_correct_answer is 1 out of 1
 260
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.74051106]
 ('90_[Article III:4]',)
@@ -399,7 +404,7 @@ after_sigmoid [0.74051106]
 273
 274
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00401099]
 ('98_[Article III:2]',)
@@ -407,7 +412,7 @@ after_sigmoid [0.00401099]
 [VALID] num_correct_answer is 1 out of 1
 275
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00662088]
 ('98_[Article III:5]',)
@@ -429,7 +434,7 @@ after_sigmoid [0.00662088]
 289
 290
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.5736654]
 ('103_[Article III:5]',)
@@ -450,7 +455,7 @@ after_sigmoid [0.5736654]
 303
 304
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.0161492]
 ('108_[Article III:2]',)
@@ -458,7 +463,7 @@ after_sigmoid [0.0161492]
 [VALID] num_correct_answer is 1 out of 1
 305
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [2.2524637e-06]
 ('108_[Article III:7]',)
@@ -479,7 +484,7 @@ after_sigmoid [2.2524637e-06]
 318
 319
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00459177]
 ('121_[Article III:5]',)
@@ -498,7 +503,7 @@ after_sigmoid [0.00459177]
 330
 331
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.0084147]
 ('122_[Article III:2]',)
@@ -506,7 +511,7 @@ after_sigmoid [0.0084147]
 [VALID] num_correct_answer is 1 out of 1
 332
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.64109564]
 ('122_[Article III:4]',)
@@ -538,7 +543,7 @@ after_sigmoid [0.81493866]
 [VALID] num_correct_answer is 0 out of 0
 350
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.1807079]
 ('135_[Article III:5]',)
@@ -557,7 +562,7 @@ after_sigmoid [0.1807079]
 361
 362
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00270564]
 ('136_[Article III:5]',)
@@ -565,7 +570,7 @@ after_sigmoid [0.00270564]
 [VALID] num_correct_answer is 1 out of 1
 363
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [1.3281996e-06]
 ('136_[Article III:7]',)
@@ -589,7 +594,7 @@ after_sigmoid [1.3281996e-06]
 379
 380
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.506912]
 ('139_[Article III]',)
@@ -597,7 +602,7 @@ after_sigmoid [0.506912]
 [VALID] num_correct_answer is 0 out of 1
 381
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.07760009]
 ('139_[Article III:2]',)
@@ -639,7 +644,7 @@ after_sigmoid [0.9729224]
 408
 409
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.08508793]
 ('146_[Article III:5]',)
@@ -666,7 +671,7 @@ after_sigmoid [0.08508793]
 428
 429
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.06026286]
 ('152_[Article III:1]',)
@@ -674,7 +679,7 @@ after_sigmoid [0.06026286]
 [VALID] num_correct_answer is 1 out of 1
 430
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.46078423]
 ('152_[Article III:2]',)
@@ -682,7 +687,7 @@ after_sigmoid [0.46078423]
 [VALID] num_correct_answer is 1 out of 1
 431
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [5.599227e-06]
 ('152_[Article III:7]',)
@@ -749,7 +754,7 @@ after_sigmoid [0.49096555]
 [VALID] num_correct_answer is 0 out of 0
 484
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00065428]
 ('162_[Article III:1]',)
@@ -757,7 +762,7 @@ after_sigmoid [0.00065428]
 [VALID] num_correct_answer is 1 out of 1
 485
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [8.950316e-07]
 ('162_[Article III:7]',)
@@ -784,7 +789,7 @@ after_sigmoid [8.950316e-07]
 504
 505
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.9466411]
 ('165_[Article III:4]',)
@@ -792,7 +797,7 @@ after_sigmoid [0.9466411]
 [VALID] num_correct_answer is 0 out of 1
 506
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [2.0403204e-06]
 ('165_[Article III:7]',)
@@ -816,7 +821,7 @@ after_sigmoid [2.0403204e-06]
 522
 523
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00029796]
 ('166_[Article III:7]',)
@@ -851,7 +856,7 @@ after_sigmoid [0.00029796]
 550
 551
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.27504086]
 ('175_[Article III:2]',)
@@ -875,7 +880,7 @@ after_sigmoid [0.27504086]
 567
 568
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.06013324]
 ('177_[Article III:5]',)
@@ -903,7 +908,7 @@ after_sigmoid [0.06013324]
 588
 589
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.8628166]
 ('202_[Article III]',)
@@ -939,7 +944,7 @@ after_sigmoid [0.8628166]
 617
 618
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00803029]
 ('212_[Article III]',)
@@ -947,7 +952,7 @@ after_sigmoid [0.00803029]
 [VALID] num_correct_answer is 1 out of 1
 619
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00088357]
 ('212_[Article III:1]',)
@@ -955,7 +960,7 @@ after_sigmoid [0.00088357]
 [VALID] num_correct_answer is 1 out of 1
 620
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.03101442]
 ('212_[Article III:2]',)
@@ -963,7 +968,7 @@ after_sigmoid [0.03101442]
 [VALID] num_correct_answer is 1 out of 1
 621
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [1.8449558e-05]
 ('212_[Article III:7]',)
@@ -988,7 +993,7 @@ after_sigmoid [1.8449558e-05]
 638
 639
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [7.438891e-05]
 ('217_[Article III:7]',)
@@ -1008,7 +1013,7 @@ after_sigmoid [7.438891e-05]
 651
 652
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00784826]
 ('219_[Article III]',)
@@ -1016,7 +1021,7 @@ after_sigmoid [0.00784826]
 [VALID] num_correct_answer is 1 out of 1
 653
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00055729]
 ('219_[Article III:1]',)
@@ -1038,7 +1043,7 @@ after_sigmoid [0.00055729]
 667
 668
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.13266748]
 ('221_[Article III:4]',)
@@ -1094,7 +1099,7 @@ after_sigmoid [0.13266748]
 716
 717
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [4.0955343e-05]
 ('238_[Article III:7]',)
@@ -1116,7 +1121,7 @@ after_sigmoid [4.0955343e-05]
 731
 732
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.8245459]
 ('244_[Article III:4]',)
@@ -1124,7 +1129,7 @@ after_sigmoid [0.8245459]
 [VALID] num_correct_answer is 0 out of 1
 733
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00443654]
 ('244_[Article III:5]',)
@@ -1160,7 +1165,7 @@ after_sigmoid [0.00443654]
 761
 762
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.95587814]
 ('246_[Article III:4]',)
@@ -1202,7 +1207,7 @@ after_sigmoid [0.95587814]
 796
 797
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00185793]
 ('257_[Article III:5]',)
@@ -1237,7 +1242,7 @@ after_sigmoid [0.00185793]
 824
 825
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00884363]
 ('265_[Article III:5]',)
@@ -1253,7 +1258,7 @@ after_sigmoid [0.00884363]
 833
 834
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.26409173]
 ('266_[Article III]',)
@@ -1261,7 +1266,7 @@ after_sigmoid [0.26409173]
 [VALID] num_correct_answer is 1 out of 1
 835
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00884363]
 ('266_[Article III:5]',)
@@ -1291,7 +1296,7 @@ after_sigmoid [0.00884363]
 857
 858
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00061641]
 ('268_[Article III:1]',)
@@ -1299,7 +1304,7 @@ after_sigmoid [0.00061641]
 [VALID] num_correct_answer is 1 out of 1
 859
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.0053587]
 ('268_[Article III:2]',)
@@ -1324,7 +1329,7 @@ after_sigmoid [0.0053587]
 876
 877
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.7200827]
 ('269_[Article III]',)
@@ -1332,7 +1337,7 @@ after_sigmoid [0.7200827]
 [VALID] num_correct_answer is 0 out of 1
 878
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00017307]
 ('269_[Article III:7]',)
@@ -1409,7 +1414,7 @@ after_sigmoid [0.00017307]
 947
 948
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.17554931]
 ('290_[Article III:2]',)
@@ -1438,7 +1443,7 @@ after_sigmoid [0.17554931]
 969
 970
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00690814]
 ('294_[Article III]',)
@@ -1476,7 +1481,7 @@ after_sigmoid [0.00690814]
 1000
 1001
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00081821]
 ('296_[Article III:1]',)
@@ -1503,7 +1508,7 @@ after_sigmoid [0.00081821]
 1020
 1021
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00312784]
 ('301_[Article III:1]',)
@@ -1587,7 +1592,7 @@ after_sigmoid [0.9248276]
 1090
 1091
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.05900443]
 ('315_[Article III:1]',)
@@ -1609,7 +1614,7 @@ after_sigmoid [0.05900443]
 1105
 1106
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.05106445]
 ('316_[Article III:5]',)
@@ -1617,7 +1622,7 @@ after_sigmoid [0.05106445]
 [VALID] num_correct_answer is 1 out of 1
 1107
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [1.7907772e-05]
 ('316_[Article III:7]',)
@@ -1637,7 +1642,7 @@ after_sigmoid [1.7907772e-05]
 1119
 1120
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.9523223]
 ('320_[Article III:4]',)
@@ -1658,7 +1663,7 @@ after_sigmoid [0.9523223]
 1133
 1134
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.8554366]
 ('321_[Article III]',)
@@ -1666,7 +1671,7 @@ after_sigmoid [0.8554366]
 [VALID] num_correct_answer is 0 out of 1
 1135
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.04868261]
 ('321_[Article III:2]',)
@@ -1674,7 +1679,7 @@ after_sigmoid [0.04868261]
 [VALID] num_correct_answer is 1 out of 1
 1136
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.07090607]
 ('321_[Article III:5]',)
@@ -1717,7 +1722,7 @@ after_sigmoid [0.07090607]
 1171
 1172
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.83473456]
 ('332_[Article III]',)
@@ -1725,7 +1730,7 @@ after_sigmoid [0.83473456]
 [VALID] num_correct_answer is 0 out of 1
 1173
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01010035]
 ('332_[Article III:1]',)
@@ -1799,7 +1804,7 @@ after_sigmoid [0.81625545]
 1232
 1233
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01676377]
 ('344_[Article III:2]',)
@@ -1819,7 +1824,7 @@ after_sigmoid [0.01676377]
 1245
 1246
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.9695106]
 ('345_[Article III:2]',)
@@ -1827,7 +1832,7 @@ after_sigmoid [0.9695106]
 [VALID] num_correct_answer is 0 out of 1
 1247
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.97571146]
 ('345_[Article III:4]',)
@@ -1835,7 +1840,7 @@ after_sigmoid [0.97571146]
 [VALID] num_correct_answer is 0 out of 1
 1248
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.4694278]
 ('345_[Article III:5]',)
@@ -1854,7 +1859,7 @@ after_sigmoid [0.4694278]
 1259
 1260
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.16528141]
 ('350_[Article III:4]',)
@@ -1927,7 +1932,7 @@ after_sigmoid [0.16528141]
 1325
 1326
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.9758664]
 ('366_[Article III:4]',)
@@ -1935,7 +1940,7 @@ after_sigmoid [0.9758664]
 [VALID] num_correct_answer is 0 out of 1
 1327
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.4214318]
 ('366_[Article III:5]',)
@@ -1952,7 +1957,7 @@ after_sigmoid [0.4214318]
 1336
 1337
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.16613266]
 ('371_[Article III:1]',)
@@ -1968,7 +1973,7 @@ after_sigmoid [0.9725576]
 [VALID] num_correct_answer is 0 out of 0
 1339
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00248203]
 ('371_[Article III:7]',)
@@ -2004,7 +2009,7 @@ after_sigmoid [0.00248203]
 1367
 1368
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.95725507]
 ('381_[Article III:4]',)
@@ -2012,7 +2017,7 @@ after_sigmoid [0.95725507]
 [VALID] num_correct_answer is 0 out of 1
 1369
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.09320587]
 ('381_[Article III:5]',)
@@ -2033,7 +2038,7 @@ after_sigmoid [0.09320587]
 1382
 1383
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.62085366]
 ('384_[Article III]',)
@@ -2041,7 +2046,7 @@ after_sigmoid [0.62085366]
 [VALID] num_correct_answer is 0 out of 1
 1384
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.25717798]
 ('384_[Article III:1]',)
@@ -2049,7 +2054,7 @@ after_sigmoid [0.25717798]
 [VALID] num_correct_answer is 1 out of 1
 1385
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00453735]
 ('384_[Article III:7]',)
@@ -2076,7 +2081,7 @@ after_sigmoid [0.00453735]
 1404
 1405
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.03015531]
 ('392_[Article III:5]',)
@@ -2120,7 +2125,7 @@ after_sigmoid [0.03015531]
 1441
 1442
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01666249]
 ('397_[Article III:2]',)
@@ -2128,7 +2133,7 @@ after_sigmoid [0.01666249]
 [VALID] num_correct_answer is 1 out of 1
 1443
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [2.6819102e-06]
 ('397_[Article III:7]',)
@@ -2196,7 +2201,7 @@ after_sigmoid [2.6819102e-06]
 1503
 1504
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.2563847]
 ('406_[Article III]',)
@@ -2244,7 +2249,7 @@ after_sigmoid [0.4730462]
 1537
 1538
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.645755]
 ('414_[Article III:4]',)
@@ -2283,7 +2288,7 @@ after_sigmoid [0.645755]
 1569
 1570
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00352058]
 ('422_[Article III:5]',)
@@ -2306,7 +2311,7 @@ after_sigmoid [0.00352058]
 1585
 1586
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.61483246]
 ('425_[Article III:4]',)
@@ -2339,7 +2344,7 @@ after_sigmoid [0.61483246]
 1611
 1612
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00051377]
 ('429_[Article III:1]',)
@@ -2347,7 +2352,7 @@ after_sigmoid [0.00051377]
 [VALID] num_correct_answer is 1 out of 1
 1613
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.06983312]
 ('429_[Article III:2]',)
@@ -2355,7 +2360,7 @@ after_sigmoid [0.06983312]
 [VALID] num_correct_answer is 1 out of 1
 1614
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00117701]
 ('429_[Article III:5]',)
@@ -2404,7 +2409,7 @@ after_sigmoid [0.00117701]
 1655
 1656
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.49801508]
 ('435_[Article III]',)
@@ -2412,7 +2417,7 @@ after_sigmoid [0.49801508]
 [VALID] num_correct_answer is 1 out of 1
 1657
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00138024]
 ('435_[Article III:1]',)
@@ -2420,7 +2425,7 @@ after_sigmoid [0.00138024]
 [VALID] num_correct_answer is 1 out of 1
 1658
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01745275]
 ('435_[Article III:5]',)
@@ -2444,7 +2449,7 @@ after_sigmoid [0.01745275]
 1674
 1675
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [5.524766e-06]
 ('436_[Article III:7]',)
@@ -2479,7 +2484,7 @@ after_sigmoid [5.524766e-06]
 1702
 1703
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00095749]
 ('440_[Article III:5]',)
@@ -2502,7 +2507,7 @@ after_sigmoid [0.00095749]
 1718
 1719
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01286073]
 ('442_[Article III]',)
@@ -2510,7 +2515,7 @@ after_sigmoid [0.01286073]
 [VALID] num_correct_answer is 1 out of 1
 1720
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.02036894]
 ('442_[Article III:2]',)
@@ -2531,7 +2536,7 @@ after_sigmoid [0.02036894]
 1733
 1734
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00117394]
 ('447_[Article III:1]',)
@@ -2539,7 +2544,7 @@ after_sigmoid [0.00117394]
 [VALID] num_correct_answer is 1 out of 1
 1735
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.18029566]
 ('447_[Article III:2]',)
@@ -2566,7 +2571,7 @@ after_sigmoid [0.18029566]
 1754
 1755
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01650194]
 ('449_[Article III]',)
@@ -2574,7 +2579,7 @@ after_sigmoid [0.01650194]
 [VALID] num_correct_answer is 1 out of 1
 1756
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.0006407]
 ('449_[Article III:1]',)
@@ -2582,7 +2587,7 @@ after_sigmoid [0.0006407]
 [VALID] num_correct_answer is 1 out of 1
 1757
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.02607976]
 ('449_[Article III:2]',)
@@ -2645,7 +2650,7 @@ after_sigmoid [0.02607976]
 1812
 1813
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.97140795]
 ('457_[Article III:2]',)
@@ -2667,7 +2672,7 @@ after_sigmoid [0.97140795]
 1827
 1828
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.02823926]
 ('461_[Article III:1]',)
@@ -2675,7 +2680,7 @@ after_sigmoid [0.02823926]
 [VALID] num_correct_answer is 1 out of 1
 1829
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.9637617]
 ('461_[Article III:2]',)
@@ -2683,7 +2688,7 @@ after_sigmoid [0.9637617]
 [VALID] num_correct_answer is 0 out of 1
 1830
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [1.1935081e-05]
 ('461_[Article III:7]',)
@@ -2709,7 +2714,7 @@ after_sigmoid [1.1935081e-05]
 1848
 1849
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.07406774]
 ('464_[Article III:4]',)
@@ -2729,7 +2734,7 @@ after_sigmoid [0.07406774]
 1861
 1862
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.19716878]
 ('468_[Article III]',)
@@ -2737,7 +2742,7 @@ after_sigmoid [0.19716878]
 [VALID] num_correct_answer is 1 out of 1
 1863
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.46922135]
 ('468_[Article III:4]',)
@@ -2745,7 +2750,7 @@ after_sigmoid [0.46922135]
 [VALID] num_correct_answer is 1 out of 1
 1864
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00704324]
 ('468_[Article III:7]',)
@@ -2841,7 +2846,7 @@ after_sigmoid [0.00704324]
 1952
 1953
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.17244628]
 ('476_[Article III:5]',)
@@ -2887,7 +2892,7 @@ after_sigmoid [0.17244628]
 1991
 1992
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [5.1028233e-05]
 ('479_[Article III:7]',)
@@ -2913,7 +2918,7 @@ after_sigmoid [5.1028233e-05]
 2010
 2011
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00025776]
 ('480_[Article III:1]',)
@@ -2921,7 +2926,7 @@ after_sigmoid [0.00025776]
 [VALID] num_correct_answer is 1 out of 1
 2012
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00053893]
 ('480_[Article III:5]',)
@@ -2947,7 +2952,7 @@ after_sigmoid [0.00053893]
 2030
 2031
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00044126]
 ('482_[Article III:1]',)
@@ -2993,7 +2998,7 @@ after_sigmoid [0.00044126]
 2069
 2070
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.01533264]
 ('484_[Article III:1]',)
@@ -3016,7 +3021,7 @@ after_sigmoid [0.01533264]
 2085
 2086
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.09616658]
 ('485_[Article III:1]',)
@@ -3033,7 +3038,7 @@ after_sigmoid [0.09616658]
 2095
 2096
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00041265]
 ('486_[Article III:5]',)
@@ -3052,7 +3057,7 @@ after_sigmoid [0.00041265]
 2107
 2108
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.20062092]
 ('488_[Article III:2]',)
@@ -3060,7 +3065,7 @@ after_sigmoid [0.20062092]
 [VALID] num_correct_answer is 1 out of 1
 2109
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.3647283]
 ('488_[Article III:4]',)
@@ -3068,7 +3073,7 @@ after_sigmoid [0.3647283]
 [VALID] num_correct_answer is 1 out of 1
 2110
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.02697143]
 ('488_[Article III:5]',)
@@ -3097,7 +3102,7 @@ after_sigmoid [0.02697143]
 2131
 2132
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.6311952]
 ('490_[Article III:4]',)
@@ -3115,7 +3120,7 @@ after_sigmoid [0.6311952]
 2142
 2143
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.26797116]
 ('492_[Article III:1]',)
@@ -3137,7 +3142,7 @@ after_sigmoid [0.26797116]
 2157
 2158
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00127496]
 ('493_[Article III:5]',)
@@ -3159,7 +3164,7 @@ after_sigmoid [0.00127496]
 2172
 2173
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00662963]
 ('495_[Article III:1]',)
@@ -3194,7 +3199,7 @@ after_sigmoid [0.00662963]
 2200
 2201
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.5552649]
 ('504_[Article III:4]',)
@@ -3218,7 +3223,7 @@ after_sigmoid [0.5552649]
 2217
 2218
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00012529]
 ('505_[Article III:7]',)
@@ -3244,7 +3249,7 @@ after_sigmoid [0.00012529]
 2236
 2237
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.68056613]
 ('513_[Article III]',)
@@ -3252,7 +3257,7 @@ after_sigmoid [0.68056613]
 [VALID] num_correct_answer is 0 out of 1
 2238
 ------------------------------
-FALSE POSITIVE!
+FALSE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.9469717]
 ('513_[Article III:2]',)
@@ -3290,7 +3295,7 @@ after_sigmoid [0.9469717]
 2268
 2269
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00349268]
 ('523_[Article III]',)
@@ -3298,7 +3303,7 @@ after_sigmoid [0.00349268]
 [VALID] num_correct_answer is 1 out of 1
 2270
 ------------------------------
-TRUE POSITIVE!
+TRUE NEGATIVE!
 batch_label [0.]
 after_sigmoid [0.00582779]
 ('523_[Article III:2]',)
@@ -3328,5 +3333,3 @@ INFO:tflog:☛ Predict by threshold: Precision 0.0540541, Recall 0.0540541, F 0.
 INFO:tflog:☛ Predict by topK:
 INFO:tflog:Top1: Precision 0.0540541, Recall 0.0540541, F 0.0540541
 INFO:tflog:✔︎ Done.
-
-Process finished with exit code 0
