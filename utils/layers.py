@@ -82,7 +82,8 @@ def do_cnn(gov_or_art,
            dropout_keep_prob):
     # Create a convolution + maxpool layer for each filter size
     pooled_outputs = []
-    
+
+    feature_maps = []
     for filter_size in filter_sizes:
         with tf.name_scope("conv-filter{}_{}".format(filter_size,
                                                      gov_or_art)):
@@ -115,6 +116,10 @@ def do_cnn(gov_or_art,
             # Apply nonlinearity
             conv_out = tf.nn.relu(conv_bn,
                                   name="relu")
+
+            print(conv_out)
+            conv_out_squeezed = tf.squeeze(conv_out, [2])
+            feature_maps.append(conv_out_squeezed)
         
         with tf.name_scope("pool-filter{}_{}".format(filter_size,
                                                      gov_or_art)):
@@ -168,7 +173,7 @@ def do_cnn(gov_or_art,
     with tf.name_scope("dropout_{}".format(gov_or_art)):
         h_drop = tf.nn.dropout(highway,
                                dropout_keep_prob)
-    return h_drop
+    return h_drop, feature_maps
 
 
 def fc_w_nl_bn(name_scope,
