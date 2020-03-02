@@ -305,16 +305,11 @@ def test(word2vec_path):
                 )
                 logger.info("✔︎ Writing to {0}\n".format(out_dir))
 
-            checkpoint_dir = os.path.abspath(os.path.join(out_dir, "checkpoints"))
-            print(checkpoint_dir)
+            checkpoint_dir = os.path.abspath(os.path.join(out_dir,
+                                                          'checkpoints'))
 
             # Summaries for loss
             loss_summary = tf.summary.scalar("loss", cnn.loss)
-
-            # Train summaries
-            train_summary_op = tf.summary.merge([loss_summary, grad_summaries_merged])
-            train_summary_dir = os.path.join(out_dir, "summaries", "train")
-            train_summary_writer = tf.summary.FileWriter(train_summary_dir, sess.graph)
 
             # Validation summaries
             validation_summary_op = tf.summary.merge([loss_summary])
@@ -326,18 +321,14 @@ def test(word2vec_path):
             saver = tf.train.Saver(
                 tf.global_variables(), max_to_keep=FLAGS.num_checkpoints
             )
-            # best_saver = checkpoints.BestCheckpointSaver(
-            #     save_dir=best_checkpoint_dir,
-            #     num_to_keep=3,
-            #     maximize=True)
 
             if FLAGS.train_or_restore == "R":
                 # Load cnn model
                 logger.info("✔︎ Loading model...")
                 print(checkpoint_dir)
-                checkpoint_file = tf.train.latest_checkpoint(checkpoint_dir)
-                logger.info(checkpoint_file)
+                # checkpoint_file = tf.train.latest_checkpoint(checkpoint_dir)
                 checkpoint_file='/Users/zachary/deepwto/deepwto-draft/models/cite_wa/OneLabelTextCNN/runs/1554644075/checkpoints/model-156300'
+                logger.info(checkpoint_file)
                 # Load the saved meta graph and restore variables
                 saver = tf.train.import_meta_graph("{0}.meta".format(checkpoint_file))
                 saver.restore(sess, checkpoint_file)
@@ -353,7 +344,6 @@ def test(word2vec_path):
                 embedding_conf.tensor_name = "embedding"
                 embedding_conf.metadata_path = FLAGS.metadata_file
 
-                projector.visualize_embeddings(train_summary_writer, config)
                 projector.visualize_embeddings(validation_summary_writer, config)
 
                 # Save the embedding visualization
@@ -399,8 +389,6 @@ def test(word2vec_path):
                     )
 
                     art = x_val_testid[0].split('_')[-1].split(' ')[-1]
-                    # print(x_val_testid[0].split('_')[-1])
-                    # print(art)
 
                     if len(art) >= 3:
                         if art[0:3] == "III":
