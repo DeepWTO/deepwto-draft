@@ -1,4 +1,5 @@
 def count_correct_pred(prediction, batch_labels):
+    TFPN = None
     count_label_one = 0
     count_label_zero = 0
     count_correct_one = 0
@@ -12,12 +13,14 @@ def count_correct_pred(prediction, batch_labels):
             print("batch_label", batch_label)
             print("after_sigmoid", prediction[idx])
         if batch_label == [1] and prediction[idx] > 0.5:
+            TFPN = "TRUE POSITIVE"
             print("------------------------------")
-            print("TRUE POSITIVE!")
+            print("TRUE POSITIVE")
             count_correct_one += 1
             print("batch_label", batch_label)
             print("after_sigmoid", prediction[idx])
         if batch_label == [1] and prediction[idx] < 0.5:
+            TFPN = "FALSE NEGATIVE"
             print("------------------------------")
             print("FALSE NEGATIVE!")
             print("batch_label", batch_label)
@@ -31,11 +34,13 @@ def count_correct_pred(prediction, batch_labels):
             print("batch_label", batch_label)
             print("after_sigmoid", prediction[idx])
         if batch_label == [0] and prediction[idx] > 0.5:
+            TFPN = "FALSE NEGATIVE"
             print("------------------------------")
             print("FALSE NEGATIVE!")
             print("batch_label", batch_label)
             print("after_sigmoid", prediction[idx])
         elif batch_label == [0] and prediction[idx] < 0.5:
+            TFPN = "TRUE NEGATIVE"
             print("------------------------------")
             print("TRUE NEGATIVE!")
             print("batch_label", batch_label)
@@ -45,4 +50,5 @@ def count_correct_pred(prediction, batch_labels):
     return count_label_one, \
            count_label_zero, \
            count_correct_one, \
-           count_correct_zero
+           count_correct_zero, \
+           TFPN
