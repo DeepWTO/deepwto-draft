@@ -83,3 +83,6 @@ GoogleNews-vectors-negative300.bin
 models/cite_wa/OneLabelTextCNN/data/
 models/cite_wa/OneLabelTextCNN/runs/
 models/cite_wa/OneLabelTextCNN/logs/
+
+models/cite_wa/OneLabelTextCNN/*.png
+models/cite_wa/OneLabelTextCNN/*.pkl
