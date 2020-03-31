@@ -1,10 +1,10 @@
 <p align="center">
   <img src="/assets/wto.png" width="497" height="370">
 </p>
-
 <br />
+
 # Regrading Fund Raising
-We've started fund-raising for the DeepWTO project. Check below
+We've started fund-raising for the project. Check below
 https://opencollective.com/deepwto/
 
 # Important Notice (as of 28 Feb 2020)
