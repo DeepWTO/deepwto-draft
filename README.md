@@ -143,7 +143,6 @@ More detailed and kind explanation about the project can be found in this __[pap
 ### Author
 [__Zachary Yoon__](https://github.com/syyunn)
 
-<br />
 ### Special Thanks to __[RandolphIV](https://github.com/RandolphVI/Multi-Label-Text-Classification)__
 
 [The repo](https://github.com/RandolphVI/Multi-Label-Text-Classification) has provided awesome model code to conduct document classification that this repo has referred to.
